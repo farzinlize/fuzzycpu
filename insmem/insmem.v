@@ -3,11 +3,12 @@ module insmem (
     output [31:0] instruction
 );
 
+parameter BIN = "instructions.bin";
 parameter SIZE = 32;
 reg [31:0] app [SIZE-1:0];
 
 initial begin
-    $readmemb("instructions.bin", app);
+    $readmemb(BIN, app);
 end
 
 assign instruction = app[address];

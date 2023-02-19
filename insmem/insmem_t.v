@@ -7,7 +7,7 @@ integer i;
 reg [31:0] a;
 wire [31:0] o;
 
-insmem #(.SIZE(1024)) uut(.address(a), .instruction(o));
+insmem #(.SIZE(1024),.BIN("test.bin")) uut(.address(a), .instruction(o));
 
 initial begin
     $dumpfile("insmem_t.vcd");
