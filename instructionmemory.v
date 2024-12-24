@@ -26,7 +26,7 @@ module instructionmemory(
 	reg [31:0] insts [5:0];
 	
 	initial begin
-		$readmemb("D:\\insts.bin", insts);		
+		$readmemb("insts.bin", insts);		
 	end
 
 	assign val = insts[address];

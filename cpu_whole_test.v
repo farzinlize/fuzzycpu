@@ -33,14 +33,17 @@ module cpu_whole_test;
 	);
 
 	initial begin
+		$dumpfile("cpu-whole.vcd");
+    	$dumpvars(0, cpu_whole_test);
+		
 		// Initialize Inputs
 		inp_clk = 0;
 
 		// Wait 100 ns for global reset to finish
-		#100;
+		#10000;
         
 		// Add stimulus here
-
+		$finish;
 	end
 	
 	always begin inp_clk = ~inp_clk; #86; end
